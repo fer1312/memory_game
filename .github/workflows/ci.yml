@@ -28,4 +28,4 @@ jobs:
 
     - name: Run tests
       run: |
-        python -m unittest test_juego.py
+        python -m unittest test_jueguito.py
