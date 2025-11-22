@@ -1,0 +1,14 @@
+- hosts: memorama
+  become: true
+  tasks:
+    - name: Instalar Docker
+      apt:
+        name: docker.io
+        state: present
+        update_cache: yes
+
+    - name: Descargar imagen desde Docker Hub
+      command: docker pull ferx13/memorama-api
+
+    - name: Ejecutar contenedor de la API
+      command: docker run -d -p 5000:5000 ferx13/memorama-api
